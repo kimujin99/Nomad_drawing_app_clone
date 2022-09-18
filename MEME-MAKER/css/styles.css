@@ -1,4 +1,4 @@
-/* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css); */
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
 
 body {
   display: flex;
@@ -6,14 +6,17 @@ body {
   width: auto;
   justify-content: center;
   align-items: center;
-  background-color: lightsteelblue;
+  background-color: #969696;
+  font-family: "Galmuri11", monospace;
 }
 
 canvas {
-  width: 650px;
-  height: 650px;
+  width: 700px;
+  height: 700px;
   background-color: white;
   border-radius: 10px;
+  box-shadow: 1px 1px 1px #000031;
+  border: 1px solid #00001e;
   margin: 10px;
   margin-bottom: 25px;
 }
@@ -27,7 +30,7 @@ canvas {
   display: flex;
   width: auto;
   padding: 10px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .brush-container {
@@ -36,17 +39,35 @@ canvas {
   padding: 0px 10px 0px 10px;
 }
 
-.color-palette {
-  width: 300px;
-  height: 100px;
+.color-container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+}
 }
 
 .title-wrap {
   display: flex;
-  font-family: "NanumBarunGothicYetHangul";
-  /* font-family: "Spoqa Han Sans Neo", "sans-serif"; */
+  margin-bottom: 10px;
 }
 
 .title-icon {
+  display: flex;
   margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  box-shadow: 1px 1px 1px #000031;
+  border: 1px solid #00001e;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
 }

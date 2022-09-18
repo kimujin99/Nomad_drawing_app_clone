@@ -1,0 +1,68 @@
+#color {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  box-shadow: 1px 1px 1px #000031;
+  border: 1px solid #00001e;
+  cursor: pointer;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+#color::-webkit-color-swatch {
+  border: none;
+}
+
+#color-palette {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  box-shadow: 1px 1px 1px #000031;
+  border: 1px solid #00001e;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.color-row {
+  display: flex;
+  width: auto;
+  height: auto;
+}
+
+.color-option {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #00001e;
+  margin: 5px;
+  transition: filter 0.2s;
+}
+
+.color-option:hover {
+  filter: brightness(50%);
+}
+
+.draw {
+  background-color: #ffffff;
+  transition: background-color 0.2s;
+}
+
+.draw:visited {
+  background-color: gray;
+}
+
+.fill {
+  background-color: gray;
+  transition: background-color 0.2s;
+}
+
+.fill:visited {
+  background-color: #ffffff;
+}
+
+.destroy:hover {
+  filter: brightness(50%);
+}
