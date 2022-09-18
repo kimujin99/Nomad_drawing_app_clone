@@ -1,12 +1,16 @@
 const lineWidth = document.getElementById("line-width");
 
+//캔버스
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
-canvas.width = 650;
-canvas.height = 650;
-ctx.lineWidth = 2;
+canvas.width = 700;
+canvas.height = 700;
+
+//브러시 두께
+ctx.lineWidth = lineWidth.value;
 let isPaining = false;
 
+//페인팅 설정
 function canclePainting(e) {
   isPaining = false;
 }
@@ -28,3 +32,9 @@ canvas.addEventListener("mousedown", (e) => {
 
 canvas.addEventListener("mouseup", canclePainting);
 canvas.addEventListener("mouseleave", canclePainting);
+
+//브러시 두께 설정
+lineWidth.addEventListener("change", (e) => {
+  ctx.lineWidth = e.target.value;
+});
+
