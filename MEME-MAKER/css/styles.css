@@ -45,6 +45,10 @@ canvas {
   width: auto;
   height: auto;
 }
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .title-wrap {
@@ -70,4 +74,12 @@ canvas {
   align-items: center;
   font-size: 18px;
 }
+
+.btn {
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  box-shadow: 1px 1px 1px #000031;
+  border: 1px solid #00001e;
+  transition: filter 0.2s;
 }

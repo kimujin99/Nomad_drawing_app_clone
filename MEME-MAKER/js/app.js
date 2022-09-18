@@ -2,6 +2,11 @@
 const color = document.getElementById("color");
 const colorRow1 = document.getElementById("color-row1");
 const colorRow2 = document.getElementById("color-row2");
+
+//버튼
+const modeBtn = document.getElementById("mode-btn");
+const destroyBtn = document.getElementById("destroy-btn");
+
 //브러시 두께
 const lineWidth = document.getElementById("line-width");
 
@@ -14,6 +19,9 @@ canvas.height = 700;
 //브러시 두께
 ctx.lineWidth = lineWidth.value;
 let isPaining = false;
+
+//채우기
+let isFilling = false;
 
 //컬러 팔레트 (색상 리스트)
 const colorOptions = [
@@ -60,6 +68,13 @@ canvas.addEventListener("click", (e) => {
     ctx.fillRect(0, 0, 700, 700);
   }
 });
+
+//지우개
+destroyBtn.addEventListener("click", () => {
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, 700, 700);
+});
+
 //브러시 두께 설정
 lineWidth.addEventListener("change", (e) => {
   ctx.lineWidth = e.target.value;
@@ -94,3 +109,16 @@ for (i = 0; i < colorOptions.length; i++) {
 
   colorRow.appendChild(colorOption);
 }
+
+//채우기 버튼 설정
+modeBtn.addEventListener("click", function () {
+  if (isFilling) {
+    isFilling = false;
+    modeBtn.classList.add("draw");
+    modeBtn.classList.remove("fill");
+  } else {
+    isFilling = true;
+    modeBtn.classList.add("fill");
+    modeBtn.classList.remove("draw");
+  }
+});
