@@ -21,6 +21,10 @@ canvas {
   margin-bottom: 25px;
 }
 
+*:focus {
+  outline: 0;
+}
+
 .w-container {
   max-width: 70%;
   height: auto;
@@ -80,4 +84,14 @@ canvas {
   box-shadow: 1px 1px 1px #000031;
   border: 1px solid #00001e;
   transition: filter 0.2s;
+}
+
+.input-text {
+  width: auto;
+  height: auto;
+  box-shadow: 1px 1px 1px #000031;
+  border: 1px solid #00001e;
+  background-color: #ffffff;
+  color: gray;
+  padding: 5px;
 }

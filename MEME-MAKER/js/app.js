@@ -1,5 +1,6 @@
 //이미지 파일
 const fileInput = document.getElementById("file");
+const fileText = document.getElementById("file-text");
 
 //컬러 팔레트
 const color = document.getElementById("color");
@@ -164,6 +165,7 @@ eraserBtn.addEventListener("click", (e) => {
 //파일 업로드
 fileInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
+  fileText.value = file.name;
   const url = URL.createObjectURL(file);
   const img = new Image();
   img.src = url;

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/range.css" />
     <link rel="stylesheet" href="css/title.css" />
     <link rel="stylesheet" href="css/color-palette.css" />
+    <link rel="stylesheet" href="css/upload-file.css" />
 
     <!-- ----- font ----- -->
     <link
@@ -61,7 +62,18 @@
               </div>
               <div class="title">이미지 추가</div>
             </div>
-            <input type="file" accept="image/*" id="file" />
+            <div class="flex-container">
+              <input id="file-text" class="input-text" type="text" readonly />
+              <label class="input-file-btn" for="file">
+                <i class="fa-solid fa-paperclip"></i>
+              </label>
+              <input
+                type="file"
+                accept="image/*"
+                id="file"
+                style="display: none"
+              />
+            </div>
           </div>
         </div>
 

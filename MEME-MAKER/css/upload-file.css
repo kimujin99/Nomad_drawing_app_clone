@@ -1,0 +1,11 @@
+.input-file-btn {
+  display: block;
+  width: 25px;
+  height: 25px;
+  box-shadow: 1px 1px 1px #000031;
+  border: 1px solid #00001e;
+  background-color: #ffffff;
+  text-align: center;
+  color: gray;
+  cursor: pointer;
+}
