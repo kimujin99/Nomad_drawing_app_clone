@@ -6,6 +6,7 @@ const colorRow2 = document.getElementById("color-row2");
 //버튼
 const modeBtn = document.getElementById("mode-btn");
 const destroyBtn = document.getElementById("destroy-btn");
+const eraserBtn = document.getElementById("eraser-btn");
 
 //브러시 두께
 const lineWidth = document.getElementById("line-width");
@@ -13,8 +14,12 @@ const lineWidth = document.getElementById("line-width");
 //캔버스
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
-canvas.width = 700;
-canvas.height = 700;
+
+const CANVAS_WIDTH = 700;
+const CANVAS_HEIGHT = 700;
+
+canvas.width = CANVAS_WIDTH;
+canvas.height = CANVAS_HEIGHT;
 
 //브러시 두께
 ctx.lineWidth = lineWidth.value;
@@ -22,6 +27,9 @@ let isPaining = false;
 
 //채우기
 let isFilling = false;
+
+//지우개
+let isErasing = false;
 
 //컬러 팔레트 (색상 리스트)
 const colorOptions = [
@@ -35,7 +43,6 @@ const colorOptions = [
   "#ecf0f1",
   "#95a5a6",
   "#000000",
-  "#ffffff",
 ];
 
 //페인팅 설정
@@ -65,14 +72,14 @@ canvas.addEventListener("mouseleave", canclePainting);
 //채우기
 canvas.addEventListener("click", (e) => {
   if (isFilling) {
-    ctx.fillRect(0, 0, 700, 700);
+    ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   }
 });
 
-//지우개
+//전체 지우개
 destroyBtn.addEventListener("click", () => {
   ctx.fillStyle = "white";
-  ctx.fillRect(0, 0, 700, 700);
+  ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 });
 
 //브러시 두께 설정
@@ -110,15 +117,43 @@ for (i = 0; i < colorOptions.length; i++) {
   colorRow.appendChild(colorOption);
 }
 
+/** -------조금 더 개선할 수 있을것 같음!-------- */
 //채우기 버튼 설정
 modeBtn.addEventListener("click", function () {
   if (isFilling) {
     isFilling = false;
-    modeBtn.classList.add("draw");
     modeBtn.classList.remove("fill");
+    modeBtn.classList.add("draw");
   } else {
     isFilling = true;
     modeBtn.classList.add("fill");
     modeBtn.classList.remove("draw");
+    if (isErasing) {
+      isErasing = false;
+      eraserBtn.classList.remove("eraser");
+      eraserBtn.classList.add("draw");
+    }
   }
 });
+
+//지우개 버튼 설정
+eraserBtn.addEventListener("click", (e) => {
+  if (isErasing) {
+    isErasing = false;
+    eraserBtn.classList.remove("eraser");
+    eraserBtn.classList.add("draw");
+    ctx.strokeStyle = "#000000";
+    color.value = "#000000";
+  } else {
+    isErasing = true;
+    eraserBtn.classList.add("eraser");
+    eraserBtn.classList.remove("draw");
+    ctx.strokeStyle = "#ffffff";
+    if (isFilling) {
+      isFilling = false;
+      modeBtn.classList.remove("fill");
+      modeBtn.classList.add("draw");
+    }
+  }
+});
+/** -------조금 더 개선할 수 있을것 같음!-------- */

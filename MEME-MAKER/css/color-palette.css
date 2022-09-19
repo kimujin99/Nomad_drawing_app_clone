@@ -50,19 +50,19 @@
   transition: background-color 0.2s;
 }
 
-.draw:visited {
-  background-color: gray;
-}
-
 .fill {
-  background-color: gray;
+  background-color: #3fbed8;
   transition: background-color 0.2s;
 }
-
-.fill:visited {
-  background-color: #ffffff;
+.destroy {
+  background-color: #f15f5f;
 }
 
 .destroy:hover {
   filter: brightness(50%);
+}
+
+.eraser {
+  background-color: #3fbed8;
+  transition: background-color 0.2s;
 }
