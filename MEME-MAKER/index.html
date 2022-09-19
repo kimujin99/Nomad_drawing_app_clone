@@ -34,12 +34,25 @@
       <canvas></canvas>
 
       <section class="container-wrap">
-        <div class="brush-container">
-          <div class="title-wrap">
-            <div class="title-icon">
-              <i class="fa-solid fa-pen"></i>
+        <div class="column-container">
+          <div class="column-container">
+            <div class="title-wrap">
+              <div class="title-icon">
+                <i class="fa-solid fa-pen"></i>
+              </div>
+              <div class="title">브러시 굵기</div>
             </div>
-            <div class="title">브러시 굵기</div>
+
+            <input
+              id="line-width"
+              class="range"
+              type="range"
+              min="1"
+              max="10"
+              value="2"
+              step="0.1"
+            />
+          </div>
           </div>
           <input
             id="line-width"
@@ -52,32 +65,32 @@
           />
         </div>
 
-        <div class="brush-container">
+        <div class="column-container">
           <div class="title-wrap">
             <div class="title-icon">
               <i class="fa-solid fa-palette"></i>
             </div>
             <div class="title">컬러 팔레트</div>
           </div>
-          <div class="color-container">
-            <div class="input-container">
-              <input type="color" id="color" />
-              <div class="buttons">
-                <button id="mode-btn" class="btn draw">
-                  <i class="fa-solid fa-fill-drip"></i>
-                </button>
-                <button id="eraser-btn" class="btn draw">
-                  <i class="fa-solid fa-eraser"></i>
-                </button>
-                <button id="destroy-btn" class="btn destroy">
-                  <i class="fa-regular fa-circle-xmark"></i>
-                </button>
-              </div>
+
+          <div class="flex-container">
+            <input type="color" id="color" />
+            <div class="buttons">
+              <button id="mode-btn" class="btn draw">
+                <i class="fa-solid fa-fill-drip"></i>
+              </button>
+              <button id="eraser-btn" class="btn draw">
+                <i class="fa-solid fa-eraser"></i>
+              </button>
+              <button id="destroy-btn" class="btn destroy">
+                <i class="fa-regular fa-circle-xmark"></i>
+              </button>
             </div>
-            <div id="color-palette">
-              <div id="color-row1" class="color-row"></div>
-              <div id="color-row2" class="color-row"></div>
-            </div>
+          </div>
+
+          <div id="color-palette">
+            <div id="color-row1" class="color-row"></div>
+            <div id="color-row2" class="color-row"></div>
           </div>
         </div>
       </section>

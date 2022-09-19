@@ -33,21 +33,18 @@ canvas {
   justify-content: space-around;
 }
 
-.brush-container {
-  display: flex;
-  flex-direction: column;
-  padding: 0px 10px 0px 10px;
-}
-
-.color-container {
+.column-container {
   display: flex;
   flex-direction: column;
   width: auto;
   height: auto;
+  justify-content: space-between;
 }
 
-.input-container {
+.flex-container {
   display: flex;
+  width: auto;
+  height: auto;
   justify-content: space-between;
 }
 
