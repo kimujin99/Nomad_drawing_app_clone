@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/title.css" />
     <link rel="stylesheet" href="css/color-palette.css" />
     <link rel="stylesheet" href="css/upload-file.css" />
+    <link rel="stylesheet" href="css/brushshape.css" />
 
     <!-- ----- font ----- -->
     <link
@@ -27,10 +28,10 @@
   </head>
 
   <body>
-    <div class="w-container">
-      <div class="title-container">
+    <main class="w-container">
+      <section class="title-container">
         <div class="text"></div>
-      </div>
+      </section>
 
       <canvas></canvas>
 
@@ -41,21 +42,57 @@
               <div class="title-icon">
                 <i class="fa-solid fa-pen"></i>
               </div>
-              <div class="title">브러시 굵기</div>
+              <div class="title">브러시 모양</div>
             </div>
+            <fieldset id="brush_radio" class="flex-container brushshape-box">
+              <!-- 네모 -->
+              <input
+                type="radio"
+                name="brush-btn"
+                id="square"
+                value="butt"
+                style="display: none"
+                checked
+              />
+              <label for="square">
+                <i class="fa-solid fa-square"></i>
+              </label>
 
-            <input
-              id="line-width"
-              class="range"
-              type="range"
-              min="1"
-              max="10"
-              value="2"
-              step="0.1"
-            />
+              <!-- 원형 -->
+              <input
+                type="radio"
+                name="brush-btn"
+                id="round"
+                value="round"
+                style="display: none"
+              />
+              <label for="round">
+                <i class="fa-solid fa-circle"></i>
+              </label>
+            </fieldset>
           </div>
 
           <div class="column-container">
+            <div class="column-container">
+              <div class="title-wrap">
+                <div class="title-icon">
+                  <i class="fa-solid fa-pen"></i>
+                </div>
+                <div class="title">브러시 굵기</div>
+              </div>
+              <input
+                id="line-width"
+                class="range"
+                type="range"
+                min="1"
+                max="10"
+                value="2"
+                step="0.1"
+              />
+            </div>
+          </div>
+
+          <!-- <div class="column-container">
             <div class="title-wrap">
               <div class="title-icon">
                 <i class="fa-solid fa-file-arrow-up"></i>
@@ -74,7 +111,7 @@
                 style="display: none"
               />
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="column-container">
@@ -89,7 +126,12 @@
             <!-- 채우기 버튼 -->
             <input type="color" id="color" />
             <div class="buttons flex-container">
-              <input type="radio" name="btn" id="fill" style="display: none" />
+              <input
+                type="radio"
+                name="palette-btn"
+                id="fill"
+                style="display: none"
+              />
               <label for="fill">
                 <i class="fa-solid fa-fill-drip"></i>
               </label>
@@ -97,7 +139,7 @@
               <!-- 지우개 버튼 -->
               <input
                 type="radio"
-                name="btn"
+                name="palette-btn"
                 id="eraser"
                 style="display: none"
               />
@@ -118,7 +160,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </main>
 
     <!----------------- script ----------------->
     <script src="js/app.js"></script>

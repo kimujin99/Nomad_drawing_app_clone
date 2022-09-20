@@ -45,24 +45,10 @@
   filter: brightness(50%);
 }
 
-.draw {
-  background-color: #ffffff;
-  transition: background-color 0.2s;
-}
-
-.fill {
-  background-color: #3fbed8;
-  transition: background-color 0.2s;
-}
 .destroy {
   background-color: #f15f5f;
 }
 
 .destroy:hover {
   filter: brightness(50%);
-}
-
-.eraser {
-  background-color: #3fbed8;
-  transition: background-color 0.2s;
 }

@@ -15,6 +15,9 @@ const eraserBtn = document.getElementById("eraser");
 //브러시 두께
 const lineWidth = document.getElementById("line-width");
 
+//브러시 모양
+const lineCap = document.getElementById("brush_radio");
+
 //캔버스
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
@@ -119,6 +122,12 @@ for (i = 0; i < colorOptions.length; i++) {
     ctx.strokeStyle = colorValue;
     ctx.fillStyle = colorValue;
     color.value = colorValue;
+
+    //지우개 버튼 활성화시 비활성화
+    if (isErasing) {
+      isErasing = false;
+      eraserBtn.checked = false;
+    }
   });
 
   colorRow.appendChild(colorOption);
@@ -131,6 +140,7 @@ fillBtn.addEventListener("click", function () {
   isErasing = false;
   if (isFilling) {
     isFilling = false;
+    fillBtn.checked = false;
   } else {
     isFilling = true;
   }
@@ -141,24 +151,35 @@ eraserBtn.addEventListener("click", (e) => {
   isFilling = false;
   if (isErasing) {
     isErasing = false;
+    eraserBtn.checked = false;
     ctx.strokeStyle = "#000000";
     color.value = "#000000";
   } else {
     isErasing = true;
     ctx.strokeStyle = "#ffffff";
+    color.value = "#ffffff";
   }
 });
 /** -------조금 더 개선할 수 있을것 같음!-------- */
 /** -------개선 완료!-------- */
 
-//파일 업로드
-fileInput.addEventListener("change", (e) => {
-  const file = e.target.files[0];
-  fileText.value = file.name;
-  const url = URL.createObjectURL(file);
-  const img = new Image();
-  img.src = url;
-  img.onload = function () {
-    ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-  };
+// //파일 업로드
+// fileInput.addEventListener("change", (e) => {
+//   const file = e.target.files[0];
+//   fileText.value = file.name;
+//   const url = URL.createObjectURL(file);
+//   const img = new Image();
+//   img.src = url;
+//   img.onload = function () {
+//     ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+//   };
+// });
+
+//브러시 모양 설정
+lineCap.addEventListener("click", () => {
+  //브러시 모양
+  const lineShape = document.querySelector(
+    "#brush_radio input[type=radio]:checked"
+  ).value;
+  ctx.lineCap = lineShape;
 });

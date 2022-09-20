@@ -56,6 +56,7 @@ label {
   border: 1px solid #00001e;
   background-color: #ffffff;
   transition: filter 0.2s;
+  transition: background-color 0.2s;
 }
 
 input[type="radio"]:checked + label {
@@ -81,6 +82,7 @@ input[type="radio"]:checked + label {
 .container-wrap {
   display: flex;
   width: auto;
+  height: auto;
   padding: 10px;
   justify-content: space-around;
 }
