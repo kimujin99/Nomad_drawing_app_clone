@@ -63,7 +63,7 @@
               <div class="title">이미지 추가</div>
             </div>
             <div class="flex-container">
-              <input id="file-text" class="input-text" type="text" readonly />
+              <input id="file-text" type="text" readonly />
               <label class="input-file-btn" for="file">
                 <i class="fa-solid fa-paperclip"></i>
               </label>
@@ -86,15 +86,27 @@
           </div>
 
           <div class="flex-container">
+            <!-- 채우기 버튼 -->
             <input type="color" id="color" />
-            <div class="buttons">
-              <button id="mode-btn" class="btn draw">
+            <div class="buttons flex-container">
+              <input type="radio" name="btn" id="fill" style="display: none" />
+              <label for="fill">
                 <i class="fa-solid fa-fill-drip"></i>
-              </button>
-              <button id="eraser-btn" class="btn draw">
+              </label>
+
+              <!-- 지우개 버튼 -->
+              <input
+                type="radio"
+                name="btn"
+                id="eraser"
+                style="display: none"
+              />
+              <label for="eraser">
                 <i class="fa-solid fa-eraser"></i>
-              </button>
-              <button id="destroy-btn" class="btn destroy">
+              </label>
+
+              <!-- 초기화 버튼 -->
+              <button id="destroy" class="destroy">
                 <i class="fa-regular fa-circle-xmark"></i>
               </button>
             </div>

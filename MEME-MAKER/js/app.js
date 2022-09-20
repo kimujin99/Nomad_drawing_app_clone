@@ -8,9 +8,9 @@ const colorRow1 = document.getElementById("color-row1");
 const colorRow2 = document.getElementById("color-row2");
 
 //버튼
-const modeBtn = document.getElementById("mode-btn");
-const destroyBtn = document.getElementById("destroy-btn");
-const eraserBtn = document.getElementById("eraser-btn");
+const fillBtn = document.getElementById("fill");
+const destroyBtn = document.getElementById("destroy");
+const eraserBtn = document.getElementById("eraser");
 
 //브러시 두께
 const lineWidth = document.getElementById("line-width");
@@ -28,6 +28,9 @@ canvas.height = CANVAS_HEIGHT;
 //브러시 두께
 ctx.lineWidth = lineWidth.value;
 let isPaining = false;
+
+//브러시 모양
+ctx.lineCap = "butt";
 
 //채우기
 let isFilling = false;
@@ -122,45 +125,31 @@ for (i = 0; i < colorOptions.length; i++) {
 }
 
 /** -------조금 더 개선할 수 있을것 같음!-------- */
+/** -------개선 완료!-------- */
 //채우기 버튼 설정
-modeBtn.addEventListener("click", function () {
+fillBtn.addEventListener("click", function () {
+  isErasing = false;
   if (isFilling) {
     isFilling = false;
-    modeBtn.classList.remove("fill");
-    modeBtn.classList.add("draw");
   } else {
     isFilling = true;
-    modeBtn.classList.add("fill");
-    modeBtn.classList.remove("draw");
-    if (isErasing) {
-      isErasing = false;
-      eraserBtn.classList.remove("eraser");
-      eraserBtn.classList.add("draw");
-    }
   }
 });
 
 //지우개 버튼 설정
 eraserBtn.addEventListener("click", (e) => {
+  isFilling = false;
   if (isErasing) {
     isErasing = false;
-    eraserBtn.classList.remove("eraser");
-    eraserBtn.classList.add("draw");
     ctx.strokeStyle = "#000000";
     color.value = "#000000";
   } else {
     isErasing = true;
-    eraserBtn.classList.add("eraser");
-    eraserBtn.classList.remove("draw");
     ctx.strokeStyle = "#ffffff";
-    if (isFilling) {
-      isFilling = false;
-      modeBtn.classList.remove("fill");
-      modeBtn.classList.add("draw");
-    }
   }
 });
 /** -------조금 더 개선할 수 있을것 같음!-------- */
+/** -------개선 완료!-------- */
 
 //파일 업로드
 fileInput.addEventListener("change", (e) => {
