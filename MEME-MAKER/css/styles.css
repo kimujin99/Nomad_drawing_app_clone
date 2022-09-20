@@ -97,6 +97,10 @@ input[type="radio"]:checked + label {
   justify-content: space-between;
 }
 
+.content-to-left {
+  justify-content: left;
+}
+
 .title-wrap {
   display: flex;
   margin-bottom: 10px;
@@ -144,4 +148,18 @@ input[type="radio"]:checked + label {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 10px;
+}
+
+.save_btn {
+  font-family: "Galmuri11", monospace;
+  font-size: 15px;
+  width: 90px;
+  height: 30px;
+  margin-left: 20px;
+  margin-right: 5px;
+  background-color: #3fbed8;
+}
+
+.save_btn:hover {
+  filter: brightness(50%);
 }

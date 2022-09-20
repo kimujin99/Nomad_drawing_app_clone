@@ -1,6 +1,8 @@
+//이미지 저장 버튼
+const saveBtn = document.getElementById("save");
+
 //이미지 파일
 const fileInput = document.getElementById("file");
-const fileText = document.getElementById("file-text");
 
 //컬러 팔레트
 const color = document.getElementById("color");
@@ -163,17 +165,16 @@ eraserBtn.addEventListener("click", (e) => {
 /** -------조금 더 개선할 수 있을것 같음!-------- */
 /** -------개선 완료!-------- */
 
-// //파일 업로드
-// fileInput.addEventListener("change", (e) => {
-//   const file = e.target.files[0];
-//   fileText.value = file.name;
-//   const url = URL.createObjectURL(file);
-//   const img = new Image();
-//   img.src = url;
-//   img.onload = function () {
-//     ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-//   };
-// });
+//파일 업로드
+fileInput.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  const url = URL.createObjectURL(file);
+  const img = new Image();
+  img.src = url;
+  img.onload = function () {
+    ctx.drawImage(img, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  };
+});
 
 //브러시 모양 설정
 lineCap.addEventListener("click", () => {
@@ -182,4 +183,13 @@ lineCap.addEventListener("click", () => {
     "#brush_radio input[type=radio]:checked"
   ).value;
   ctx.lineCap = lineShape;
+});
+
+//이미지 저장
+saveBtn.addEventListener("click", (e) => {
+  const url = canvas.toDataURL();
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "myDrawing.png";
+  a.click();
 });

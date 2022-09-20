@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="css/range.css" />
     <link rel="stylesheet" href="css/title.css" />
     <link rel="stylesheet" href="css/color-palette.css" />
-    <link rel="stylesheet" href="css/upload-file.css" />
-    <link rel="stylesheet" href="css/brushshape.css" />
 
     <!-- ----- font ----- -->
     <link
@@ -31,6 +29,14 @@
     <main class="w-container">
       <section class="title-container">
         <div class="text"></div>
+      </section>
+
+      <section class="flex-container content-to-left">
+        <button id="save" class="save_btn">파일저장</button>
+        <label class="input-file-btn" for="file">
+          <i class="fa-solid fa-paperclip"></i>
+        </label>
+        <input type="file" accept="image/*" id="file" style="display: none" />
       </section>
 
       <canvas></canvas>
