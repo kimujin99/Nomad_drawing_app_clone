@@ -1,5 +1,10 @@
-# ʕ•ᴥ•ʔ Nomad_drawing_app_clone
-노마드 코더 무료강의 - <a href="https://nomadcoders.co/javascript-for-beginners-2">VanilaJS 그림앱 클론코딩</a>
+# Nomad_drawing_app_clone ˚₊*̥ ʕ•ᴥ•ʔ‧˚₊*̥
+(NomadCoders 바닐라JS로 그림판 만들기)
 
-깃헙 퍼블리싱 사이트 : 
-<a href="https://kimujin99.github.io/Nomad_drawing_app_clone/index.html">바로가기!</a>
+## Reference
+- Canvas API: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+- Cursor Editor: https://www.cursor.cc/
+- Nomad Code: https://nomadcoders.co/javascript-for-beginners-2
+
+## Results
+[URL: https://kimujin99.github.io/Nomad_drawing_app_clone]
