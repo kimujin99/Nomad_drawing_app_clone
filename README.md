@@ -1,4 +1,5 @@
-# Nomad_drawing_app_clone ˚₊*̥ ʕ•ᴥ•ʔ‧˚₊*̥
+# Nomad_drawing_app_clone 
+˚₊*̥ ₍⑅ᐢ..ᐢ⑅₎‧˚₊*̥  
 (NomadCoders 바닐라JS로 그림판 만들기)
 
 ## Reference
