@@ -20,6 +20,11 @@ const lineWidth = document.getElementById("line-width");
 //브러시 모양
 const lineCap = document.getElementById("brush_radio");
 
+//커서 경로
+const PENCILCURSOR = "url(/img/pencil.cur), auto";
+const ERASERCURSOR = "url(/img/eraser.cur), auto";
+const BUCKETCURSOR = "url(/img/paint_bucket.cur), auto";
+
 //캔버스
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
@@ -35,7 +40,7 @@ ctx.lineWidth = lineWidth.value;
 let isPaining = false;
 
 //브러시 모양
-ctx.lineCap = "butt";
+ctx.lineCap = "round";
 
 //채우기
 let isFilling = false;
@@ -127,6 +132,7 @@ for (i = 0; i < colorOptions.length; i++) {
 
     //지우개 버튼 활성화시 비활성화
     if (isErasing) {
+      canvas.style.cursor = PENCILCURSOR;
       isErasing = false;
       eraserBtn.checked = false;
     }
@@ -141,9 +147,11 @@ for (i = 0; i < colorOptions.length; i++) {
 fillBtn.addEventListener("click", function () {
   isErasing = false;
   if (isFilling) {
+    canvas.style.cursor = PENCILCURSOR;
     isFilling = false;
     fillBtn.checked = false;
   } else {
+    canvas.style.cursor = BUCKETCURSOR;
     isFilling = true;
   }
 });
@@ -152,11 +160,13 @@ fillBtn.addEventListener("click", function () {
 eraserBtn.addEventListener("click", (e) => {
   isFilling = false;
   if (isErasing) {
+    canvas.style.cursor = PENCILCURSOR;
     isErasing = false;
     eraserBtn.checked = false;
     ctx.strokeStyle = "#000000";
     color.value = "#000000";
   } else {
+    canvas.style.cursor = ERASERCURSOR;
     isErasing = true;
     ctx.strokeStyle = "#ffffff";
     color.value = "#ffffff";

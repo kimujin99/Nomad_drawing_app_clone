@@ -13,7 +13,6 @@ input[type="range"]:focus {
 input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 15px;
-  cursor: pointer;
   box-shadow: 1px 1px 1px #000000;
   background: #3fbed8;
   border-radius: 27px;
