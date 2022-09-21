@@ -42,6 +42,9 @@ let isPaining = false;
 //브러시 모양
 ctx.lineCap = "round";
 
+//기본 커서
+canvas.style.cursor = PENCILCURSOR;
+
 //채우기
 let isFilling = false;
 
