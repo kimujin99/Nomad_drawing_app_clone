@@ -21,9 +21,12 @@ const lineWidth = document.getElementById("line-width");
 const lineCap = document.getElementById("brush_radio");
 
 //커서 경로
-const PENCILCURSOR = "url(./img/pencil.cur), auto";
-const ERASERCURSOR = "url(./img/eraser.cur), auto";
-const BUCKETCURSOR = "url(./img/paint_bucket.cur), auto";
+const PENCILCURSOR =
+  "url(https://kimujin99.github.io/Nomad_drawing_app_clone/MEME-MAKER/img/pencil.cur), auto";
+const ERASERCURSOR =
+  "url(https://kimujin99.github.io/Nomad_drawing_app_clone/MEME-MAKER/img/eraser.cur), auto";
+const BUCKETCURSOR =
+  "url(https://kimujin99.github.io/Nomad_drawing_app_clone/MEME-MAKER/img/paint_bucket.cur), auto";
 
 //캔버스
 const canvas = document.querySelector("canvas");
