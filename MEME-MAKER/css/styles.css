@@ -19,8 +19,7 @@ canvas {
   border: 1px solid #00001e;
   margin: 10px;
   margin-bottom: 25px;
-  cursor: url(https://kimujin99.github.io/Nomad_drawing_app_clone/MEME-MAKER/img/pencil.cur),
-    auto;
+  cursor: url(./img/pencil.cur), auto;
 }
 
 button {
