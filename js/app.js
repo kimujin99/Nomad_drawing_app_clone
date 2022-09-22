@@ -111,6 +111,12 @@ lineWidth.addEventListener("change", (e) => {
 color.addEventListener("change", (e) => {
   ctx.strokeStyle = e.target.value;
   ctx.fillStyle = e.target.value;
+  //지우개 버튼 활성화시 비활성화
+  if (isErasing) {
+    canvas.style.cursor = PENCILCURSOR;
+    isErasing = false;
+    eraserBtn.checked = false;
+  }
 });
 
 //팔레트 그리기
